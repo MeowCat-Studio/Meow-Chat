@@ -3,6 +3,8 @@
 define("password","admin");
 // 写入文件密码，防止外部人员恶意刷屏，默认admin
 define("wpassword","admin");
+// 管理员用户名，默认Admin
+define("adminuser","Admin");
 // 存储文件夹，默认为程序目录下的storage文件夹，当前聊天记录和公告配置存放在此处
 define("storage",dirname(__FILE__)."/storage/");
 // 历史记录文件夹，默认为程序目录下的history文件夹，清屏后的文件会备份在此处
