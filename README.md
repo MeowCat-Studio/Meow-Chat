@@ -55,8 +55,8 @@ define("title","MeowChat - A Public Chat System");
 | password | 控制台的唯一密码 | "admin" | 建议修改，否则任何知道默认密码的人都有权进入控制台 |
 | wpassword | 写入文件的密码 | "admin" | 建议修改，防止恶意刷屏 |
 | adminuser | 管理员用户名 | "Admin" | 推荐修改 |
-| storage | 保存聊天记录、公告配置、程序版本的文件夹名称 | dirname(__FILE__)."/storage/" | 维持现状 |
-| history | 保存历史记录的文件夹名称 | dirname(__FILE__)."/history/" | 维持现状 |
+| storage | 保存聊天记录、公告配置、程序版本的文件夹名称 | dirname(\_\_FILE\_\_)."/storage/" | 维持现状 |
+| history | 保存历史记录的文件夹名称 | dirname(\_\_FILE\_\_)."/history/" | 维持现状 |
 | linkchar1 | 第一个分隔符 | "&" | 无需修改 |
 | linkchar2 | 第二个分隔符 | "'says'" | 推荐修改 |
 | title | 站点标题 | "MeowChat - A Public Chat System" | 推荐修改 |
