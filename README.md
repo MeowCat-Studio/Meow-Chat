@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/MeowCat-Studio/Meow-Chat/storage/chat.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/MeowCat-Studio/Meow-Chat/gh-pages/chat.png"></p>
 
 高度自由的大众聊天室，现在，回应您的等待。
 
