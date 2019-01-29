@@ -21,7 +21,7 @@
 	<center>
 		<img style="margin-top:10%;height:140px;weigh:140px;background-color:white;border-radius: 15px;" src="favicon.ico"/>
 		<h1>Meow-Chat</h1>
-   <form class="form-signin" action="chat.php" style="width:300px;">
+   <form class="form-signin" action="chat.php" method="post" style="width:300px;">
 		<div class="input-group">
   <span class="input-group-addon">用户名</span>
   <input id="username" name="username" type="text" class="form-control" minlength="3" maxlength="12" <?php if(!empty($_GET['username'])){echo 'value="'.$_GET['username'].'"';};?> required placeholder="聊天用户名"/>

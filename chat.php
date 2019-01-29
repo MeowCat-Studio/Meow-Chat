@@ -15,16 +15,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"
-      <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="renderer" content="webkit">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>
+      <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="renderer" content="webkit"/>
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <title><?php echo title ?></title>
 <script type="text/javascript">
+function sendimgbtn() {
+	document.getElementById("sendmessage").style.display = "none";
+	document.getElementById("sendimage").style.display = "block";
+}
+function sendchatbtn() {
+	document.getElementById("sendmessage").style.display = "block";
+	document.getElementById("sendimage").style.display = "none";
+}
+function uploadimage() {
+	document.getElementById('image').submit();
+	sendchatbtn();
+}
 		window.onload=function(){
 			check();
 			scroll();
@@ -44,15 +54,6 @@ function checkmsg(){
 		 send();
 	 };
  };
-		function none(){
-			document.getElementById("sendmessage").style.display = "none";
-			document.getElementById("sendimg").style.display = "block";
-		}
-		
-		function none_img(){
-			document.getElementById("sendmessage").style.display = "block";
-			document.getElementById("sendimg").style.display = "none";
-		}
 		function send()
 		{
 		var xmlhttp;
@@ -219,7 +220,7 @@ function checkmsg(){
 	<link rel="stylesheet" href="css/buttons.css">
 </head>
 <body style="background-color:#3C291E;">
-<input style="display:none;" id="name" type="text" value="<?php if(isset($_GET['username'])){echo $_GET['username'];};?>"></input>
+<input style="display:none;" id="name" type="text" value="<?php if(isset($_POST['username'])){echo $_POST['username'];};?>"></input>
     <div id="wrap">
    		<div id="main">
         	<div id="allspace" class="all_space">
@@ -230,8 +231,21 @@ function checkmsg(){
         <div class="send" id="sendmessage">
   <div class="input-group" style="bottom:15px;">
   <span class="input-group-addon" style="-webkit-app-region: drag;">内容</span>
-  <input id="text" type="text" class="form-control" style="height:27px;" maxlength="64"/>
-  <span class="input-group-btn"><button onclick="checkmsg();" class="btn btn-info"/><span class="am-icon-paper-plane-o"></span></button>
+  <input id="text" type="text" class="form-control" style="height:28px;" maxlength="64"/>
+  <span class="input-group-btn"><button onclick="sendimgbtn();" class="btn btn-info"/><span class="glyphicon glyphicon-picture"></span></button><button onclick="checkmsg();" class="btn btn-info"/><span class="am-icon-paper-plane-o"></span></button>
+  </span>
+</div>
+        </div>
+        <div class="send" id="sendimage" style="display:none;">
+  <div class="input-group" style="bottom:15px;">
+  <span class="input-group-addon" style="-webkit-app-region: drag;">图片</span>
+  <form action="image.php" method="post" id="image" enctype="multipart/form-data" target="_blank">
+	<input style="display:none;" id="username"  name="username" type="text" value="<?php if(isset($_POST['username'])){echo $_POST['username'];};?>"></input>
+    <input type="file" name="file" class="form-control" size="20" style="height:28px;" />
+
+</form>
+  <span class="input-group-btn"><button onclick="sendchatbtn();" class="btn btn-info"/><span class="glyphicon glyphicon-pencil"></span></button>
+    <button onclick="uploadimage();" class="btn btn-info"/><span class="am-icon-paper-plane-o"></span></button>
   </span>
 </div>
         </div>
