@@ -80,10 +80,10 @@ else
 		$timehidden = date('Y-m-d H:i:s',time());
 		if(file_exists(storage.''.chatfile)) {
 			$myfile = fopen(storage.''.chatfile, "a") or die("Unable to open file!");
-			fwrite($myfile,$ip . "+" . $timehidden . "" . linkchar1 . "[".$time."] [" . $un . "] " .linkchar2 . "" .  "<img src=\"".str_replace(dirname(__FILE__), '', $filename)."\" />" . "\r\n");
+			fwrite($myfile,$ip . "+" . $timehidden . "" . linkchar1 . "[".$time."] [" . $un . "] " .linkchar2 . "" .  "<img src=\"".str_replace(dirname(__FILE__), '', ".".$filename)."\" />" . "\r\n");
 			fclose($myfile);
 		} else {
-			file_put_contents(storage.''.chatfile, $ip . "+" . $timehidden . "" . linkchar1 . "[".$time."] [" . $un . "] " .linkchar2 . "" . "<img src=\"".str_replace(dirname(__FILE__), '', $filename)."\" />" . "\r\n");
+			file_put_contents(storage.''.chatfile, $ip . "+" . $timehidden . "" . linkchar1 . "[".$time."] [" . $un . "] " .linkchar2 . "" . "<img src=\"".str_replace(dirname(__FILE__), '', ".".$filename)."\" />" . "\r\n");
 		};
 		$etime=microtime(true);
 		$totaltime=$etime-$stime;
